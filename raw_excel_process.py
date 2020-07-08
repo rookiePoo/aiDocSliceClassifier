@@ -4,7 +4,7 @@ import numpy as np
 
 FIELD_SLICE_DICT = {"装运": "PORT",
              "卸货": "PORT",
-             "船名": "TXT",
+             "船名": "VESSEL",
              "合同": "NO",
              "LC": "LCNO",
              "BL": "BLNO",
@@ -93,7 +93,7 @@ def get_train_input_label(model_data):
 if __name__ == "__main__":
     # excel_path = '/Users/peng_ji/Desktop/labeled01/734201AB19002866/result.xlsx'
     # get_valid_info_from_excel(excel_path)
-    excel_dir = '/Users/peng_ji/Desktop/labeled01'
+    excel_dir = '/Users/peng_ji/Desktop/AB_train'
     all_data = get_all_excel_data(excel_dir)
     char_inputs, loc_inputs, char_labels, res_labels = get_train_input_label(all_data)
     #len(char_inputs)

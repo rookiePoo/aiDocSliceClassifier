@@ -12,8 +12,15 @@ def load_tokenizer(tokenizer_path):
         tokenizer = pickle.load(f)
     return tokenizer
 
-def char_tokenizer(sentence_list, tokenizer_path, maxLen=Config.sequenceMaxLength):
-    idx_sequence_pad_list = []
+def char_tokenizer(sentence_list, tokenizer_path=None, tokenizer=None, maxLen=Config.sequenceMaxLength):
+    if tokenizer:
+        idx_sequence_list = tokenizer.texts_to_sequences(sentence_list)
+        idx_sequence_pad_list = pad_sequences(idx_sequence_list, maxLen,
+                                              padding='post', truncating='post')
+        return idx_sequence_pad_list
+    if not tokenizer_path:
+        print("tokenizer_path and tokenizer can not be None.")
+        return []
     if os.path.exists(tokenizer_path):
         # 使用现有的tokenizer
         tokenizer = load_tokenizer(tokenizer_path)
@@ -80,6 +87,6 @@ if __name__ == "__main__":
     sentence_list = ['s df\tAS D',
                      'df df \n']
 
-    idx_sequence_pad_list = char_tokenizer(sentence_list, 'tokenizer/tokenizer.pickle', 12)
+    idx_sequence_pad_list = char_tokenizer(sentence_list, 'tokenizer/tokenizer_nopunc.pickle', 12)
     print(idx_sequence_pad_list)
 

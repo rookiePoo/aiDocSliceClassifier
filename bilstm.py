@@ -239,11 +239,16 @@ class BiLSTM(object):
 if __name__ == "__main__":
     import numpy as np
     bilstm = BiLSTM()
-    excel_dir = '/Users/peng_ji/Desktop/labeled01'
+    excel_dir = '/Users/peng_ji/Desktop/AB_train'
 
-    bilstm.charcnn_merge_loc_model()
-    #bilstm.train(excel_dir)
-    bilstm.predict_merge(excel_dir, './saved_model/model-weights-55-0.96.hdf5')
-    #bilstm.predict_one(np.array([[20]*50]), np.array([[0.1,0.1,0.1]]), 'model-weights-55-0.96.hdf5')
+    # 先训练charcnn部分
+    # bilstm.build_cnn_model()
+    # bilstm.train_charcnn(excel_dir)
+
+    # 注释上面👆训练，再训练完整模型
+    bilstm.charcnn_merge_loc_model(checkpoint_path='./saved_model/charcnn-weights-17-0.97.hdf5')
+    bilstm.train(excel_dir)
+    #bilstm.predict_merge(excel_dir, './saved_model/modelnopunc-weights-55-0.96.hdf5')
+    #bilstm.predict_one(np.array([[20]*50]), np.array([[0.1,0.1,0.1]]), 'modelnopunc-weights-55-0.96.hdf5')
 
 

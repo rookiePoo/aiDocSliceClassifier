@@ -1,7 +1,7 @@
 # 配置参数
 import string
 class TrainingConfig(object):
-    epoches = 100
+    epoches = 128
     batchSize = 64
     evaluateStep = 100
     checkpointSaveStep = 100
