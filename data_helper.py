@@ -1,10 +1,14 @@
 import os
 import pickle
 import numpy as np
+import random
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
 from config import Config
-from raw_excel_process import get_all_excel_data, get_train_input_label
+from raw_excel_process import get_all_excel_data, get_train_input_label, ModelData
+
+random.seed(822)
+np.random.seed(822)
 
 def load_tokenizer(tokenizer_path):
     with open(tokenizer_path, 'rb') as f:
@@ -52,7 +56,7 @@ def data_generator(excel_dir, train_rate=0.8):
     # char_inputs, loc_inputs, char_labels, res_labels = get_train_input_label(all_data)
     # idx_seq_pad_inputs = char_tokenizer(char_inputs, Config.tokenizerPath)
     perm = np.arange(len(all_data))
-    np.random.seed(822)
+
     np.random.shuffle(perm)
 
     num_train = int(len(all_data)*train_rate)
@@ -81,12 +85,156 @@ def data_generator(excel_dir, train_rate=0.8):
 
     return train_dict, test_dict
 
+def change_ocr(ocr_input):
+    alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,:;!?-/()#*@=+&%><"\' '
+    def delete_str_i(ocr_, idx):
+        return ocr_[:idx] + ocr_[idx + 1:]
+
+    def duplicate_str_i(ocr_, idx):
+        return ocr_[:idx] + ocr_[idx] + ocr_[idx:]
+
+    def replace_str_i(ocr_, idx):
+        ocr_list = list(ocr_)
+        ocr_list[idx] = random.choice(list(alphabet))
+        return ''.join(ocr_list)
+
+    change_type = random.choice([1, 2, 3])
+    # 第一种方式：删除字符，模拟ocr漏字
+    if change_type == 1:
+        ocr_len = len(ocr_input)
+        if ocr_len < 10:
+            return ocr_input
+        delete_num = int(ocr_len / 10)
+        delete_num = random.choice(range(1, delete_num+1))
+        for i in range(delete_num):
+            di = random.choice(range(ocr_len - i))
+            ocr_input = delete_str_i(ocr_input, di)
+    # 第二种方式：冗余字符，模拟ocr多字
+    elif change_type == 2:
+        ocr_len = len(ocr_input)
+        dup_num = int(ocr_len / 10)
+        dup_num = max(dup_num, 2)
+        dup_num = random.choice(range(1, dup_num))
+        for i in range(dup_num):
+            di = random.choice(range(ocr_len + i))
+            ocr_input = duplicate_str_i(ocr_input, di)
+    # 第三种方式：替换字符，模拟ocr错字
+    else:
+        ocr_len = len(ocr_input)
+        replace_num = int(ocr_len / 10)
+        replace_num = max(replace_num, 2)
+        replace_num = random.choice(range(1, replace_num))
+        for i in range(replace_num):
+            ri = random.choice(range(ocr_len))
+            ocr_input = replace_str_i(ocr_input, ri)
+    return ocr_input
+
+def my_smote(train_dict):
+    def calculate_pos_neg_rate(train_dict):
+        res_labels = train_dict['res_labels']
+        pos_idxs = []
+        neg_num = 0
+        pos_num = 0
+        for i in range(len(res_labels)):
+            res_label = res_labels[i]
+            if res_label == 1:
+                pos_idxs.append(i)
+                pos_num += 1
+            else:
+                neg_num += 1
+        return pos_idxs, pos_num, neg_num
+
+    pos_idxs, pos_num, neg_num = calculate_pos_neg_rate(train_dict)
+    neg_to_pos = float(neg_num) / pos_num
+    print(neg_num, pos_num, neg_to_pos)
+    if neg_to_pos < 2.0:
+        return train_dict
+    smote_times = int(neg_to_pos)
+
+    loc_inputs_list = list(train_dict['loc_inputs'])
+    char_inputs_list = list(train_dict['char_inputs'])
+    char_labels_list = list(train_dict['char_labels'])
+    res_labels_list = list(train_dict['res_labels'])
+
+    for pos_i in pos_idxs:
+        loc_input_i = train_dict['loc_inputs'][pos_i]
+        char_input_i = train_dict['char_inputs'][pos_i]
+
+        char_label_i = train_dict['char_labels'][pos_i]
+        res_label_i = train_dict['res_labels'][pos_i]
+
+        # print("========================== ")
+        # print("original: ", loc_input_i, char_input_i)
+
+        loc_near_i = []
+        for pos_j in pos_idxs:
+            if pos_i == pos_j:
+                continue
+            loc_input_j = train_dict['loc_inputs'][pos_j]
+            # 如果出现在原始切片的左上角，就丢弃，因为正常切片通常在右下方
+            if loc_input_j[0] < loc_input_i[0] or loc_input_j[1] < loc_input_i[1]:
+                continue
+            dist = np.linalg.norm(np.array(loc_input_i[:2]) - np.array(loc_input_j[:2]))
+
+            loc_near_i.append([loc_input_j, dist])
+        loc_near_i = sorted(loc_near_i, key=lambda loc: loc[-1])
+        if not loc_near_i:
+            print("怎么一个都没有？")
+            continue
+        if len(loc_near_i) < smote_times:
+            for i in range(smote_times + 1 - len(loc_near_i)):
+                loc_near_i.append(loc_near_i[-1])
+
+        # 开始进行smote
+        for niloc, dist in loc_near_i[:smote_times]:
+            new_ni_loc = [loc_input_i[0] + random.random() * (niloc[0] - loc_input_i[0]),
+                          loc_input_i[1] + random.random() * (niloc[1] - loc_input_i[1]),
+                          loc_input_i[2] * random.uniform(0.8, 1.2)]
+            if random.random() > 0.2:
+                pre_input, post_input = char_input_i.split('\t')
+                new_char_input_i = pre_input + '\t' + change_ocr(post_input[:-1]) + post_input[-1]
+            else:
+                new_char_input_i = char_input_i
+            # print("smote: ", new_ni_loc, new_char_input_i)
+            loc_inputs_list.append(new_ni_loc)
+            char_inputs_list.append(new_char_input_i)
+            char_labels_list.append(char_label_i)
+            res_labels_list.append(res_label_i)
+            # train_dict['loc_inputs'].append(new_ni_loc)
+            # train_dict['char_inputs'].append(new_char_input_i)
+            # train_dict['char_labels'].append(char_label_i)
+            # train_dict['res_labels'].append(res_label_i)
+
+    perm = np.arange(len(loc_inputs_list))
+    np.random.shuffle(perm)
+    train_dict['loc_inputs'] = np.array(loc_inputs_list)
+    train_dict['char_inputs'] = np.array(char_inputs_list)
+    train_dict['char_labels'] = np.array(char_labels_list)
+    train_dict['res_labels'] = np.array(res_labels_list)
+
+    _, pos_num, neg_num = calculate_pos_neg_rate(train_dict)
+    neg_to_pos = float(neg_num) / pos_num
+    print(neg_num, pos_num, neg_to_pos)
+    train_char_idx_inputs = char_tokenizer(train_dict['char_inputs'],  tokenizer=Config.tokenizer)
+    train_dict['char_idx_inputs'] = train_char_idx_inputs
+
+    return train_dict
 
 
 if __name__ == "__main__":
-    sentence_list = ['s df\tAS D',
-                     'df df \n']
-
-    idx_sequence_pad_list = char_tokenizer(sentence_list, 'tokenizer/tokenizer_nopunc.pickle', 12)
-    print(idx_sequence_pad_list)
+    # sentence_list = ['s df\tAS D',
+    #                  'df df \n']
+    #
+    # token = load_tokenizer('tokenizer/tokenizer.pickle')
+    # #idx_sequence_pad_list = char_tokenizer(sentence_list, 'tokenizer/tokenizer_nopunc.pickle', 12)
+    # print(token.word_counts)
+    # print(len(token.word_index), token.word_index)
+    # print(token.word_docs)
+    # print(token.index_docs)
+    #
+    # for k,v in token.word_index.items():
+    #     print(k,v)
+    excel_dir = '/Users/peng_ji/Desktop/AB_train'
+    train_dict, _ = data_generator(excel_dir, train_rate=0.8)
+    my_smote(train_dict)
 

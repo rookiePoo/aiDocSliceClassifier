@@ -79,7 +79,7 @@ if __name__ == "__main__":
     all_data = []
     bilstm = BiLSTM()
     bilstm.charcnn_merge_loc_model()
-    bilstm.load_weights('./saved_model/model-weights-63-0.96.hdf5')
+    bilstm.load_weights('./saved_model/model-weights-47-0.96.hdf5')
 
     pred_rate_all = []
 

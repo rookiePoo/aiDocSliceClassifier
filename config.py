@@ -1,5 +1,12 @@
 # 配置参数
 import string
+import pickle
+def load_tokenizer(tokenizer_path):
+    with open(tokenizer_path, 'rb') as f:
+        print("tokenizer has been loaded.")
+        tokenizer = pickle.load(f)
+    return tokenizer
+
 class TrainingConfig(object):
     epoches = 128
     batchSize = 64
@@ -16,14 +23,15 @@ class ModelConfig(object):
 
 
 class Config(object):
-    alphabet = string.ascii_letters
-    digit = '0123456789'
-    whitespace = ' \t\n$'
-    numChars = len(alphabet + digit + whitespace) + 1
+    # alphabet = string.ascii_letters
+    # digit = '0123456789'
+    # whitespace = ' \t\n$'
+    # numChars = len(alphabet + digit + whitespace) + 1
+    tokenizerPath = './tokenizer/tokenizer.pickle'
+    tokenizer = load_tokenizer(tokenizerPath)
+    numChars = len(tokenizer.word_index) + 1
     sequenceMaxLength = 50  # 取了所有序列长度的均值
 
-
-    tokenizerPath = './tokenizer/tokenizer.pickle'
     checkpointPath = "./saved_model/model-weights-{epoch:02d}-{val_res_pred_acc:.2f}.hdf5"
     lstmCheckpointPath = "./saved_model/lstm-weights-{epoch:02d}-{val_acc:.2f}.hdf5"
     charcnnCheckpointPath = "./saved_model/charcnn-weights-{epoch:02d}-{val_acc:.2f}.hdf5"

@@ -6,7 +6,7 @@ from keras.optimizers import RMSprop, Adam
 
 from config import Config
 from keras.utils import plot_model
-from data_helper import data_generator
+from data_helper import data_generator, my_smote
 import os
 
 
@@ -174,8 +174,11 @@ class BiLSTM(object):
 
         # self.charcnn_model.save('charcnn.h5')
 
-    def train(self, excel_dir):
-        train_dict, test_dict = data_generator(excel_dir)
+    def train(self, excel_dir, is_enhance_pos = True):
+        train_dict, test_dict = data_generator(excel_dir, train_rate=0.95)
+
+        if is_enhance_pos:
+            train_dict = my_smote(train_dict)
 
         self.merge_model.compile(optimizer='adam',
                                  loss={'class_pred': 'binary_crossentropy', 'res_pred': 'binary_crossentropy'},
@@ -195,6 +198,7 @@ class BiLSTM(object):
 
         self.merge_model.fit({'char_input': train_dict['char_idx_inputs'], 'loc_input': train_dict['loc_inputs']},
                              {'class_pred': train_dict['char_labels'], 'res_pred': train_dict['res_labels']},
+                              shuffle=True,
                               epochs=Config.trainingConfig.epoches,
                               batch_size=Config.trainingConfig.batchSize,
                               validation_data=(
@@ -246,9 +250,12 @@ if __name__ == "__main__":
     # bilstm.train_charcnn(excel_dir)
 
     # 注释上面👆训练，再训练完整模型
-    bilstm.charcnn_merge_loc_model(checkpoint_path='./saved_model/charcnn-weights-17-0.97.hdf5')
-    bilstm.train(excel_dir)
+    # bilstm.charcnn_merge_loc_model(checkpoint_path='./saved_model/charcnn-weights-17-0.97.hdf5')
+    # bilstm.train(excel_dir)
     #bilstm.predict_merge(excel_dir, './saved_model/modelnopunc-weights-55-0.96.hdf5')
     #bilstm.predict_one(np.array([[20]*50]), np.array([[0.1,0.1,0.1]]), 'modelnopunc-weights-55-0.96.hdf5')
+
+    bilstm.charcnn_merge_loc_model(checkpoint_path=None)
+    bilstm.train(excel_dir)
 
 
