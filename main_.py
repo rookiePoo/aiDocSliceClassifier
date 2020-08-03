@@ -1,5 +1,5 @@
 import openpyxl
-from data_helper import  char_tokenizer, load_tokenizer
+from data_helper import char_tokenizer, load_tokenizer
 from bilstm import BiLSTM
 import numpy as np
 import os

@@ -222,19 +222,19 @@ def my_smote(train_dict):
 
 
 if __name__ == "__main__":
-    # sentence_list = ['s df\tAS D',
-    #                  'df df \n']
-    #
-    # token = load_tokenizer('tokenizer/tokenizer.pickle')
-    # #idx_sequence_pad_list = char_tokenizer(sentence_list, 'tokenizer/tokenizer_nopunc.pickle', 12)
-    # print(token.word_counts)
-    # print(len(token.word_index), token.word_index)
-    # print(token.word_docs)
-    # print(token.index_docs)
+    sentence_list = ['s df\tAS D',
+                     'df df \n']
+
+    token = load_tokenizer('tokenizer/tokenizer.pickle')
+    #idx_sequence_pad_list = char_tokenizer(sentence_list, 'tokenizer/tokenizer_nopunc.pickle', 12)
+    print(token.word_counts)
+    print(len(token.word_index), token.word_index)
+    print(token.word_docs)
+    print(token.index_docs)
     #
     # for k,v in token.word_index.items():
     #     print(k,v)
-    excel_dir = '/Users/peng_ji/Desktop/AB_train'
-    train_dict, _ = data_generator(excel_dir, train_rate=0.8)
-    my_smote(train_dict)
+    # excel_dir = '/Users/peng_ji/Desktop/AB_train'
+    # train_dict, _ = data_generator(excel_dir, train_rate=0.8)
+    # my_smote(train_dict)
 

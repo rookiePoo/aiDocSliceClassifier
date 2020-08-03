@@ -45,3 +45,9 @@ class Config(object):
     trainingConfig = TrainingConfig()
 
     modelConfig = ModelConfig()
+
+if __name__ == "__main__":
+    tokenizerPath = './tokenizer/tokenizer.pickle'
+    tokenizer = load_tokenizer(tokenizerPath)
+    numChars = len(tokenizer.word_index) + 1
+    print(numChars)
