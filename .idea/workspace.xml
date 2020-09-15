@@ -2,10 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3642318a-0c3f-4eee-a7dc-fed6f7b298bf" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/charcnn.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/charcnn_model.png" afterPath="$PROJECT_DIR$/charcnn_model.png" />
       <change beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
       <change beforePath="$PROJECT_DIR$/data_helper.py" afterPath="$PROJECT_DIR$/data_helper.py" />
-      <change beforePath="$PROJECT_DIR$/main_.py" afterPath="$PROJECT_DIR$/main_.py" />
+      <change beforePath="$PROJECT_DIR$/main_no_type.py" afterPath="$PROJECT_DIR$/main_no_type.py" />
+      <change beforePath="$PROJECT_DIR$/merge_model.png" afterPath="$PROJECT_DIR$/merge_model.png" />
+      <change beforePath="$PROJECT_DIR$/raw_excel_process.py" afterPath="$PROJECT_DIR$/raw_excel_process.py" />
+      <change beforePath="$PROJECT_DIR$/saved_model/model-weights-42-0.95.hdf5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/saved_model/model-weights-44-0.96.hdf5" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/saved_model/modelnopunc-weights-55-0.96.hdf5" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,33 +26,21 @@
     <SUITE FILE_PATH="coverage/aiDocSliceClassifier$config.coverage" NAME="config Coverage Results" MODIFIED="1595903492999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aiDocSliceClassifier$main__py.coverage" NAME="main_.py Coverage Results" MODIFIED="1593604357046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aiDocSliceClassifier$Twisted_Trial_in_test_file_py.coverage" NAME="test_file.py Coverage Results" MODIFIED="1593604072210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$main_no_type.coverage" NAME="main_no_type Coverage Results" MODIFIED="1594714241661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$main_no_type.coverage" NAME="main_no_type Coverage Results" MODIFIED="1596966036441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$charcnn.coverage" NAME="charcnn Coverage Results" MODIFIED="1600077939663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aiDocSliceClassifier$test_file_py.coverage" NAME="test_file.py Coverage Results" MODIFIED="1593604105318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$raw_excel_process.coverage" NAME="raw_excel_process Coverage Results" MODIFIED="1594198428032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$raw_excel_process.coverage" NAME="raw_excel_process Coverage Results" MODIFIED="1596955556831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aiDocSliceClassifier$Twisted_Trial_in_main__py.coverage" NAME="main_.py Coverage Results" MODIFIED="1593604325698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/aiDocSliceClassifier$main_.coverage" NAME="main_ Coverage Results" MODIFIED="1594279284493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$data_helper.coverage" NAME="data_helper Coverage Results" MODIFIED="1595316653083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/aiDocSliceClassifier$data_helper.coverage" NAME="data_helper Coverage Results" MODIFIED="1598253400943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="68">
-                <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main_.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="83" column="71" lean-forward="false" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+            <state relative-caret-position="799">
+              <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="46" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -56,8 +51,8 @@
       <file leaf-file-name="main_no_type.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_no_type.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="361">
+              <caret line="105" column="17" lean-forward="false" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -68,18 +63,18 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="120" column="5" lean-forward="false" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+            <state relative-caret-position="24">
+              <caret line="80" column="16" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_helper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="data_helper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/data_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3944">
-              <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+            <state relative-caret-position="163">
+              <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -90,8 +85,8 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="35" column="84" lean-forward="false" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="84" />
+            <state relative-caret-position="543">
+              <caret line="45" column="70" lean-forward="false" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
               <folding>
                 <element signature="e#7#20#0" expanded="true" />
               </folding>
@@ -112,8 +107,8 @@
       <file leaf-file-name="raw_excel_process.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/raw_excel_process.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="922">
+              <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -121,12 +116,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bilstm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="charcnn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/charcnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-343">
+              <caret line="162" column="58" lean-forward="false" selection-start-line="162" selection-start-column="58" selection-end-line="162" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bilstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bilstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="561">
+              <caret line="42" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,8 +154,24 @@
       <find>test</find>
       <find>field_res_dict</find>
       <find>Config</find>
-      <find>FIELD_SLICE_DICT</find>
       <find>tokenizer</find>
+      <find>data_generator</find>
+      <find>field_slice_type</find>
+      <find>lstmCheckpointPath</find>
+      <find>char_label_i</find>
+      <find>filters</find>
+      <find>predict_excel</find>
+      <find>to_categorical</find>
+      <find>loc_inputs_list</find>
+      <find>get_all_excel_data</find>
+      <find>load_tokenizer</find>
+      <find>FIELD_SLICE_DICT</find>
+      <find>embeddingDim</find>
+      <find>change_ocr</find>
+      <find>train</find>
+      <find>calculate_pos_neg_rate</find>
+      <find>xlrd</find>
+      <find>_neg_ocr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -158,13 +183,14 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/bilstm_multiclass.py" />
         <option value="$PROJECT_DIR$/test_file.py" />
-        <option value="$PROJECT_DIR$/raw_excel_process.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/bilstm.py" />
-        <option value="$PROJECT_DIR$/main_no_type.py" />
         <option value="$PROJECT_DIR$/main_.py" />
+        <option value="$PROJECT_DIR$/main_no_type.py" />
         <option value="$PROJECT_DIR$/data_helper.py" />
+        <option value="$PROJECT_DIR$/charcnn.py" />
         <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/raw_excel_process.py" />
       </list>
     </option>
   </component>
@@ -211,8 +237,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,6 +258,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -254,21 +280,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.config">
-    <configuration name="bilstm" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.charcnn">
+    <configuration name="charcnn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda/envs/python35/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aiDocSliceClassifier" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bilstm.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/charcnn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -312,25 +338,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="main_" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda/envs/python35/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="aiDocSliceClassifier" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="main_no_type" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -350,20 +357,39 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="raw_excel_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aiDocSliceClassifier" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/raw_excel_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main_" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_no_type" />
-      <item index="2" class="java.lang.String" itemvalue="Python.bilstm" />
-      <item index="3" class="java.lang.String" itemvalue="Python.data_helper" />
-      <item index="4" class="java.lang.String" itemvalue="Python.config" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main_no_type" />
+      <item index="1" class="java.lang.String" itemvalue="Python.data_helper" />
+      <item index="2" class="java.lang.String" itemvalue="Python.config" />
+      <item index="3" class="java.lang.String" itemvalue="Python.raw_excel_process" />
+      <item index="4" class="java.lang.String" itemvalue="Python.charcnn" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.config" />
+        <item index="0" class="java.lang.String" itemvalue="Python.charcnn" />
         <item index="1" class="java.lang.String" itemvalue="Python.data_helper" />
         <item index="2" class="java.lang.String" itemvalue="Python.main_no_type" />
-        <item index="3" class="java.lang.String" itemvalue="Python.bilstm" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main_" />
+        <item index="3" class="java.lang.String" itemvalue="Python.raw_excel_process" />
+        <item index="4" class="java.lang.String" itemvalue="Python.config" />
       </list>
     </recent_temporary>
   </component>
@@ -422,10 +448,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1849315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20547946" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3109589" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21643835" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29756796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.518598" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -457,7 +483,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="68">
             <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -495,7 +520,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,7 +541,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="68">
             <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
@@ -552,7 +578,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -584,56 +612,31 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="68">
             <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-            <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/keras/engine/training_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python3.5/site-packages/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4323">
+          <caret line="750" column="0" lean-forward="false" selection-start-line="750" selection-start-column="0" selection-end-line="750" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main_.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="83" column="71" lean-forward="false" selection-start-line="83" selection-start-column="71" selection-end-line="83" selection-end-column="71" />
+        <state relative-caret-position="799">
+          <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="46" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_no_type.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="120" column="5" lean-forward="false" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3944">
-          <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="35" column="84" lean-forward="false" selection-start-line="35" selection-start-column="84" selection-end-line="35" selection-end-column="84" />
-          <folding>
-            <element signature="e#7#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -646,21 +649,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bilstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="42" column="32" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_no_type.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="105" column="17" lean-forward="false" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="45" column="70" lean-forward="false" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+          <folding>
+            <element signature="e#7#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/charcnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-343">
+          <caret line="162" column="58" lean-forward="false" selection-start-line="162" selection-start-column="58" selection-end-line="162" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/raw_excel_process.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="17" />
+        <state relative-caret-position="922">
+          <caret line="57" column="30" lean-forward="false" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bilstm.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="24">
+          <caret line="80" column="16" lean-forward="true" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="63" column="40" lean-forward="true" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

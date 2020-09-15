@@ -130,3 +130,9 @@ dmypy.json
 
 .idea/
 .DS_Store
+
+# model
+*.hdf5
+
+# logs
+*.log
